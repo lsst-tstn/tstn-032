@@ -1,0 +1,9 @@
+% bibentry template for lsst.bib in https://github.com/lsst/lsst-texmf/blob/main/texmf/bibtex/bib/lsst.bib
+
+@DocuShare{TSTN-032,
+   author = { Parker Fagrelius },
+    title = {AuxTel Illumination System Handbook},
+     year = 2022,
+    month = Apr,
+   handle = {TSTN-032},
+      url = {https://tstn-032.lsst.io } }
