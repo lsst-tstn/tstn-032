@@ -2,6 +2,9 @@
 
 .. sectnum::
 
+.. note::
+
+   **This technote is a work-in-progress.**
 
 Abstract
 ========
@@ -10,16 +13,15 @@ Rubin Observatory Auxilliary Telescope Calibration Illumination System Handbook
 
 Overview
 ================
-The Auxilliary Telescope (AuxTel) Calibration Illumination System will be used to illuminate the white calibration screen in the Auxilliary Telescope with several wavelengths of light. The illumination can be tuned from 350-1200 nm. The Illumination System will sit on the dome floor directly below the calibration screen. 
+The Auxilliary Telescope (AuxTel) Calibration Illumination System will be used to illuminate the white calibration screen in the Auxilliary Telescope with tunable light source, ranging in wavelength from 350-1200 nm. The Illumination System will sit on the dome floor directly below the calibration screen. 
 
-The system was developed and built in Tucson. This document is meant to give an overview of the system and document the process of assembling the system when it is shipped to Chile. It also includes an overview of how the system should be operated with sample code. This document also includes links to all documentation related to this system so it can be more readily accessed. 
+The system was developed and built in Tucson. This document is meant to give an overview of the system and document the process of assembling the system when it is shipped to Chile. It also includes an overview of how the system should be operated with sample code. We also provide links to all documentation related to this system so it can be more readily accessed. 
 
 The work to prepare this susbystem for shipment was tracked in the JIRA Epic `SITCOM-259c <https://jira.lsstcorp.org/browse/SITCOM-259>`__ 
 
-.. figure:: /_static/development/docs/functional_diagram.png
-   :name: functional-diagram
-   :target: ../_images/functional_diagram.png
-   :alt: Functional Diagram
+The majority of the documentation on this system can be accessed on `Docushare Collection-11943 <https://docushare.lsst.org/docushare/dsweb/View/Collection-11943>`__
+
+
 
 Elements
 ==============
@@ -49,7 +51,7 @@ The chiller documentation on Docushare can be found `here <https://docushare.lss
 
 Monochromator
 -------------
-The monochromator is essentially a spectrometer. With the incoming white light, it can output any wavelength from 0 - 1200 nm with fairly high resolution, however we limit the wavelength range to 350 - 1200 nm. The monochromator is the Horiba iHR 320 Fully Automated Imaging Spectrometer. There are two 1200 gr/mm gratings: centered at 400 nm (blue) and one at 750 nm (red). These gratings both have a spectral dispersion of $\sim$2.31 nm/mm. There are two slits, both of which can be adjusted from 0-5mm, but not including 5mm.  The ``Entry" slit is where the light from the white light source enters the monochromator and the "Exit" is where the light exits the monochromator as a ``single" wavelength. It also includes a mirror. The monochromator uses very little power at 12V to change the slit width, the wavelength, and the grating. 
+The monochromator is essentially a spectrometer. With the incoming white light, it can output any wavelength from 0 - 1200 nm with fairly high resolution, however we limit the wavelength range to 350 - 1200 nm. The monochromator is the Horiba iHR 320 Fully Automated Imaging Spectrometer. There are two 1200 gr/mm gratings: centered at 400 nm (blue) and one at 750 nm (red). These gratings both have a spectral dispersion of :math:`\sim2.31` nm/mm. There are two slits, both of which can be adjusted from 0-5mm, but not including 5mm.  The "Entry" slit is where the light from the white light source enters the monochromator and the "Exit" is where the light exits the monochromator as a "single" wavelength. It also includes a mirror. The monochromator uses very little power at 12V to change the slit width, the wavelength, and the grating. 
 
 The software for the monochromator is run on a Windows Machine, mounted on an Embedded Systems minicontroller. It is connected via USB to this windows machine. When first starting up, the windows machine must be accessed via Remote Desktop for the initialization process. Once that has completed, the CSC can be used to control the Monochromator.
 
@@ -57,8 +59,8 @@ The monochromator is secured with it's three feet mounted to the table.
 
 The manual can be found on Docushare `here <https://docushare.lsst.org/docushare/dsweb/View/Collection-5178>`__
 
-Fiber Spectrograph System
--------------------------
+Fiber Spectrograph
+------------------
 and fiber illuminator
 
 Electrometer
@@ -85,6 +87,14 @@ The linear actuator that drives the shutter sits on the top of the structure and
 
 Fans, PDU, Network switch, Emergency switch
 
+Electronics
+-----------
+.. figure:: /_static/AuxTel_Ill_Functional_Layout_2.png
+   :name: functional-diagram
+   :target: ../_images/AuxTel_Ill_Functional_Layout_2.png
+   :alt: Functional Diagram
+
+
 Setup
 =====
 
@@ -95,6 +105,7 @@ Should include lots of pictures for the mechanical assembly
 Fill the water cell with water.
 Fill the chiller with water/ethanol mix.
 Must open the slits for the monochromator manually.
+
 
 Operational Setup
 -----------------
