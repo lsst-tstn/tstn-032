@@ -330,6 +330,18 @@ The linear actuator that drives the shutter sits on the top of the structure and
 
 Maintenance & Troubleshooting
 =============================
+Fiber Spectrograph
+------------------
+The fiber spectrograph is directly plugged into the auxtel illumination control computer via USB. Sometimes the CSC stops running. If the Fiber Spectrograph CSC is ``OFFLINE``, do the following:
+
+1. Log into the auxtel illumination control computer: ``ssh <pfagrelius>@auxtel-ill-control.cp.lsst.org``
+2. Switch user to ``saluser``: ``su saluser``
+3. Check that the docker package is not running ``docker ps``
+4. ``cd /deploy-lsstts/docker-compose-admin/summit/auxtel-ill-control/``
+5. If the daemon docker container is not running, first run it: ``./launch_daemon.sh``
+6. Launch the docker container: ``./launch_AuxTel_illumination_containers.sh``
+7. You can check that everything is working as expected by looking at the log: ``docker logs fiberspectrograph_broadband``
+
 
 White Light Source Connection
 -----------------------------
